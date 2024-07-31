@@ -9,8 +9,8 @@ app.use(cors({
     credentials:true
 }))
 
-app.use(expresss.json({limit:"16kb"}))
-app.use(expree.urlencoded({extended:true,limit:"16kb"}))
+app.use(express.json({limit:"16kb"}))
+app.use(express.urlencoded({extended:true,limit:"16kb"}))
 app.use(express.static("public"))
 
 app.use(cookieParser())
@@ -19,9 +19,12 @@ app.use(cookieParser())
 
 import userRouter from "./routes/user.routes.js" 
 
-//Routes  declaration
+// //Routes  declaration
 
-app.use("/api/v1/users", userRouter)
+app.use("/users", userRouter)
+// app.get('/test', (req, res) => {
+//     res.status(200).json({ message: "Test route working" });
+// });
 
 
 
